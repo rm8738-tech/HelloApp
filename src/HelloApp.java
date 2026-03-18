@@ -5,9 +5,16 @@ public class HelloApp {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            for (String name : args) {   // enhanced for loop
-                System.out.println("Hello " + name);
+            String result = "Hello ";
+
+            for (String name : args) {
+                result += name + ", ";
             }
+
+            // remove trailing ", "
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println(result);
         }
 
     }
