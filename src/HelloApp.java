@@ -1,9 +1,21 @@
-public class HelloApp{
+public class HelloApp {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World");
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } else {
+            String result = "Hello ";
+
+            for (String name : args) {
+                result += name + ", ";
+            }
+
+            // remove trailing ", "
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println(result);
+        }
 
     }
-
 }
